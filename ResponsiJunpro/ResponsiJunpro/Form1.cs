@@ -241,7 +241,7 @@ namespace ResponsiJunpro
         }
 
         // Execute INSERT, UPDATE, DELETE QUERY
-        public DataTable ExecuteNonQuery(string sql, NpgsqlParameter[] parameters)
+        public int ExecuteNonQuery(string sql, NpgsqlParameter[] parameters)
         {
             try
             {
