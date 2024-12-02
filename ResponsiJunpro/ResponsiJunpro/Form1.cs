@@ -23,6 +23,31 @@ namespace ResponsiJunpro
             InitializeComponent();
         }
 
+        //get department id
+        private int GetDepartmentId()
+        {
+            if(rbHR.Checked) return 1;
+            if(rbENG.Checked) return 2;
+            if (rbDEV.Checked) return 3;
+            if (rbPM.Checked) return 4;
+            if (rbFin.Checked) return 5;
+            return 0;
+        }
+
+        private void HandleStatusCode(int statusCode, string successMessage, string errorMessage)
+        {
+            if(statusCode == 200 || statusCode == 201 || statusCode == 204)
+            {
+                MessageBox.Show($"[{statusCode}] {successMessage}", "Success");
+                //LoadData();
+            }
+            else if (statusCode == 409 || statusCode == 404)
+            {
+                throw new Exception($"[{statusCode}] {errorMessage}");
+            }
+        }
+
+
         private void radioButton4_CheckedChanged(object sender, EventArgs e)
         {
 
