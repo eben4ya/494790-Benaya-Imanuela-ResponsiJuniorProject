@@ -1,8 +1,8 @@
 # temporary files
 .vs/
-ResponsiJunpro/.vs/
-ResponsiJunpro/bin/
-ResponsiJunpro/obj/
+ResponsiJunpro/ResponsiJunpro/.vs/
+ResponsiJunpro/ResponsiJunpro/bin/
+ResponsiJunpro/ResponsiJunpro/obj/
 
 # User spesific files
 *.user
