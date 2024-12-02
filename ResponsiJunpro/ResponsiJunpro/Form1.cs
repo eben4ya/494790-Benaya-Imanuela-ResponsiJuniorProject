@@ -167,6 +167,21 @@ namespace ResponsiJunpro
 
         private void radioButton4_CheckedChanged(object sender, EventArgs e)
         {
+            InsertData();
+        }
+
+        private void btnInsert_Click(object sender, EventArgs e)
+        {
+            EditData();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            DeleteData();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
 
         }
     }
