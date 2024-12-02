@@ -184,6 +184,11 @@ namespace ResponsiJunpro
         {
 
         }
+
+        private void dgvDataTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 
     public class DatabaseHandler
