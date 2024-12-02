@@ -16,7 +16,7 @@ Terdiri dari fitur:
 
 ## **Funtion di PostgreSQL**
 
-### **Menambahkan karyawan**
+### **Menambahkan Karyawan**
 
 ```
 CREATE OR REPLACE FUNCTION add_employee(in_id_karyawan CHAR(6), in_nama CHAR(30), in_id_dep INTEGER)
@@ -30,6 +30,26 @@ BEGIN
 		INSERT INTO karyawan (id_karyawan, nama, id_dep)
 		VALUES (in_id_karyawan, in_nama, in_id_dep);
 		RETURN 201;
+	END IF;
+END;
+$$ LANGUAGE plpgsql;
+```
+
+### **Edit Karyawan**
+
+```
+CREATE OR REPLACE FUNCTION edit_employee(in_id_karyawan CHAR(6), in_nama CHAR(30), in_id_dep INTEGER)
+
+RETURNS INTEGER AS $$
+
+BEGIN
+	IF EXISTS (SELECT 1 FROM karyawan WHERE id_karyawan = in_id_karyawan) THEN
+		UPDATE karyawan
+		SET nama = in_nama, id_dep = in_id_dep
+		WHERE id_karyawan = in_id_karyawan;
+		RETURN 200;
+	ELSE
+		RETURN 404;
 	END IF;
 END;
 $$ LANGUAGE plpgsql;
