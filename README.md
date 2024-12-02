@@ -54,3 +54,22 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 ```
+
+### **Menghapus Karyawan**
+
+```
+CREATE OR REPLACE FUNCTION delete_employee(in_id_karyawan CHAR(6))
+
+RETURNS INTEGER AS $$
+
+BEGIN
+	IF EXISTS (SELECT 1 FROM karyawan WHERE id_karyawan = in_id_karyawan) THEN
+		DELETE FROM karyawan
+		WHERE id_karyawan = in_id_karyawan;
+		RETURN 204;
+	ELSE
+		RETURN 404;
+	END IF;
+END;
+$$ LANGUAGE plpgsql;
+```
