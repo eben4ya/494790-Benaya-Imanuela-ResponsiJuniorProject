@@ -12,4 +12,6 @@ Terdiri dari fitur:
 
 ## **Entity Relational Diagram**
 
+![ERD](./public/ERD1.png)
+
 ## **Funtion di PostgreSQL**
