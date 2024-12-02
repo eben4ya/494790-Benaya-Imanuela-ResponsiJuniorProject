@@ -118,7 +118,7 @@ namespace ResponsiJunpro
         }
 
 
-        //edit employee function
+        //delete employee function
         private void DeleteData()
         {
             if (Row == null)
@@ -144,7 +144,7 @@ namespace ResponsiJunpro
             }
         }
 
-        //edit employee function
+        //load employee function
         private void LoadData()
         {
             string sql = "SELECT * FROM karyawan, departemen WHERE karyawan.id_dep = departemen.id_dep ";
