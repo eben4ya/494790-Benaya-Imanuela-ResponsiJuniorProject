@@ -21,6 +21,8 @@ namespace ResponsiJunpro
         public Form1()
         {
             InitializeComponent();
+            dbHandler = new DatabaseHandler(connString);
+            LoadData();
         }
 
         //get department id
@@ -39,7 +41,7 @@ namespace ResponsiJunpro
             if(statusCode == 200 || statusCode == 201 || statusCode == 204)
             {
                 MessageBox.Show($"[{statusCode}] {successMessage}", "Success");
-                //LoadData();
+                LoadData();
             }
             else if (statusCode == 409 || statusCode == 404)
             {
@@ -139,6 +141,23 @@ namespace ResponsiJunpro
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        //edit employee function
+        private void LoadData()
+        {
+            string sql = "SELECT * FROM karyawan, departemen WHERE karyawan.id_dep = departemen.id_dep ";
+   
+
+            try
+            {
+               dbHandler.ExecuteSelectQuery(sql, null);
+                dgvDataTable.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
             }
         }
 
