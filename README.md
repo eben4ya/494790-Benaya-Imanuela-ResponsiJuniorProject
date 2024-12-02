@@ -2,6 +2,10 @@
 
 Benaya Imanuela - 22/494790/TK/54313
 
+## Note
+
+Setelah clone repository, jangan lupa install package Npgsql
+
 ## **Aplikasi CRUD Data Karyawan**
 
 Terdiri dari fitur:
