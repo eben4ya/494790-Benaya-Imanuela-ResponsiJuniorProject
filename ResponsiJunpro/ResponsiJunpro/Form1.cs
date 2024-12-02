@@ -47,6 +47,104 @@ namespace ResponsiJunpro
             }
         }
 
+        //add employee function
+        private void InsertData()
+        {
+            string nama = tbName.Text;
+            int id_dep = GetDepartmentId();
+
+            if(id_dep == 0) 
+            {
+                MessageBox.Show("Pilih Departemen!");
+                return;
+            }
+
+            string sql = "SELECT * FROM add_employee(@in_id_karyawan, @in_nama, @in_id_dep)";
+            var parameters = new NpgsqlParameter[]
+            {
+                new NpgsqlParameter("@in_id_karyawan", id_dep.ToString()),
+                new NpgsqlParameter("@in_nama", nama),
+                new NpgsqlParameter("@in_id_dep", id_dep)
+            };
+
+            try
+            {
+                int statusCode = dbHandler.ExecuteNonQuery(sql, parameters);
+                HandleStatusCode(statusCode, "Berhasil dibuat!", "Karyawan sudah ada!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
+        //edit employee function
+        private void EditData()
+        {
+            if(Row == null)
+            {
+                MessageBox.Show("Pilih karyawan untuk di edit", "Info");
+                return;
+            }
+            string nama = tbName.Text;
+            int id_dep = GetDepartmentId();
+
+            if (id_dep == 0)
+            {
+                MessageBox.Show("Pilih Departemen!");
+                return;
+            }
+
+            string sql = "SELECT * FROM edit_employee(@in_id_karyawan, @in_nama, @in_id_dep)";
+            var parameters = new NpgsqlParameter[]
+            {
+                new NpgsqlParameter("@in_id_karyawan", Row.Cells["id_karyawan"].Value),
+                new NpgsqlParameter("@in_nama", nama),
+                new NpgsqlParameter("@in_id_dep", id_dep)
+            };
+
+            try
+            {
+                int statusCode = dbHandler.ExecuteNonQuery(sql, parameters);
+                HandleStatusCode(statusCode, "Edit Berhasil!", "Karyawan tidak ditemukan");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
+        //edit employee function
+        private void DeleteData()
+        {
+            if (Row == null)
+            {
+                MessageBox.Show("Pilih karyawan untuk di edit", "Info");
+                return;
+            }
+
+            string sql = "SELECT * FROM delete_employee(@in_id_karyawan)";
+            var parameters = new NpgsqlParameter[]
+            {
+                new NpgsqlParameter("@in_id_karyawan", Row.Cells["id_karyawan"].Value),
+            };
+
+            try
+            {
+                int statusCode = dbHandler.ExecuteNonQuery(sql, parameters);
+                HandleStatusCode(statusCode, "Hapus Karyawan Berhasil!", "Karyawan tidak ditemukan");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
+
+
 
         private void radioButton4_CheckedChanged(object sender, EventArgs e)
         {
@@ -120,7 +218,7 @@ namespace ResponsiJunpro
                     cmd.Parameters.AddRange(parameters);
                 }
 
-                return (DataTable)cmd.ExecuteScalar();
+                return (int)cmd.ExecuteScalar();
             }
             catch (Exception ex)
             {
