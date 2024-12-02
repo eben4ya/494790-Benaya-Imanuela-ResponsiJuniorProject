@@ -1,0 +1,9 @@
+C:\Users\eben4ya\Documents\Responsi-Junpro\ResponsiJunpro\ResponsiJunpro\bin\Debug\ResponsiJunpro.exe.config
+C:\Users\eben4ya\Documents\Responsi-Junpro\ResponsiJunpro\ResponsiJunpro\bin\Debug\ResponsiJunpro.exe
+C:\Users\eben4ya\Documents\Responsi-Junpro\ResponsiJunpro\ResponsiJunpro\bin\Debug\ResponsiJunpro.pdb
+C:\Users\eben4ya\Documents\Responsi-Junpro\ResponsiJunpro\ResponsiJunpro\obj\Debug\ResponsiJunpro.csproj.AssemblyReference.cache
+C:\Users\eben4ya\Documents\Responsi-Junpro\ResponsiJunpro\ResponsiJunpro\obj\Debug\ResponsiJunpro.Properties.Resources.resources
+C:\Users\eben4ya\Documents\Responsi-Junpro\ResponsiJunpro\ResponsiJunpro\obj\Debug\ResponsiJunpro.csproj.GenerateResource.cache
+C:\Users\eben4ya\Documents\Responsi-Junpro\ResponsiJunpro\ResponsiJunpro\obj\Debug\ResponsiJunpro.csproj.CoreCompileInputs.cache
+C:\Users\eben4ya\Documents\Responsi-Junpro\ResponsiJunpro\ResponsiJunpro\obj\Debug\ResponsiJunpro.exe
+C:\Users\eben4ya\Documents\Responsi-Junpro\ResponsiJunpro\ResponsiJunpro\obj\Debug\ResponsiJunpro.pdb

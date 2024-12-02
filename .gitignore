@@ -1,0 +1,17 @@
+# temporary files
+.vs/
+ResponsiJunpro/.vs/
+ResponsiJunpro/bin/
+ResponsiJunpro/obj/
+
+# User spesific files
+*.user
+*.suo
+
+# Build results
+*.exe
+*.dll
+*.pdb
+
+# Logs
+*.log
